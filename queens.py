@@ -1,6 +1,13 @@
 #This function will allow us to place a queen and check if spot is available
 def place_queens(n, queens, row):
-    pass
+    for i in range(n):
+        queens[row] = i
+        if check_conflicts(queens, row):
+            if row == n - 1:
+                print(queens)
+                globals()["solutions"] += 1
+            else:
+                place_queens(n, queens, row + 1)
 
 #This function will allow us to check if we will have any threats
 def check_conflicts(queens, row):
