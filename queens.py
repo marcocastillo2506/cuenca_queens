@@ -12,17 +12,13 @@ def place_queens(n, queens, row):
 #This function will allow us to check if we will have any threats
 def check_conflicts(queens, row):
     current = queens[row]
-
     for i in range(row):
         if queens[i] == current:
             return False
-
     for index, queen in enumerate(queens[:row]):
         distance = row - index
-
-        if abs(queen - cur) == distance:
+        if abs(queen - current) == distance:
             return False
-
     return True
 
 #This function will allow us to create our board size
