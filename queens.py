@@ -29,3 +29,5 @@ def nqueens(n):
         queens[0] = i
         place_queens(n, queens, 1)
     return globals()["solutions"]
+
+print(nqueens(8))
