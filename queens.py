@@ -8,4 +8,9 @@ def check_conflicts(queens, row):
 
 #This function will allow us to create our board size
 def nqueens(n):
-    pass
+    globals()["solutions"] = 0
+    queens = [0] * n
+    for i in range(n):
+        queens[0] = i
+        place_queens(n, queens, 1)
+    return globals()["solutions"]
