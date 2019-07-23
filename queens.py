@@ -4,7 +4,7 @@ def place_queens(n, queens, row):
         queens[row] = i
         if check_conflicts(queens, row):
             if row == n - 1:
-                print(queens)
+                squeens.extend(queens)          
                 globals()["solutions"] += 1
             else:
                 place_queens(n, queens, row + 1)
@@ -18,16 +18,30 @@ def check_conflicts(queens, row):
     for index, queen in enumerate(queens[:row]):
         distance = row - index
         if abs(queen - current) == distance:
-            return False
+            return False       
     return True
 
 #This function will allow us to create our board size
 def nqueens(n):
+    globals()["squeens"] = []
+    globals()["size"] = n
     globals()["solutions"] = 0
-    queens = [0] * n
-    for i in range(n):
+    globals()["queens"] = [0] * n
+    for i in range(n): 
         queens[0] = i
         place_queens(n, queens, 1)
     return globals()["solutions"]
 
-print(nqueens(8))
+nqueens(8)
+#This funcion will allow us to split our main array to determain each solution individually
+def split(arr, size):
+     globals()["solucion_individual"] = []
+     while len(arr) > size:
+         pice = arr[:size]
+         solucion_individual.append(pice)
+         arr   = arr[size:]
+     solucion_individual.append(arr)
+     return solucion_individual
+
+split(squeens, size) 
+print(solucion_individual)
