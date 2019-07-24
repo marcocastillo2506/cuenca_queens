@@ -44,4 +44,5 @@ def split(arr, size):
      solucion_individual.append(arr)
      return solucion_individual
 
-split(squeens, size) 
+split(squeens, size)
+print(size)
