@@ -1,3 +1,4 @@
+from db import *
 #This function will allow us to place a queen and check if spot is available
 def place_queens(n, queens, row):
     for i in range(n):
@@ -5,6 +6,7 @@ def place_queens(n, queens, row):
         if check_conflicts(queens, row):
             if row == n - 1:
                 squeens.extend(queens)
+                print(queens)
                 globals()["solutions"] += 1
             else:
                 place_queens(n, queens, row + 1)
@@ -23,6 +25,7 @@ def check_conflicts(queens, row):
 
 #This function will allow us to create our board size
 def nqueens(n):
+    globals()["count"] = 0
     globals()["squeens"] = []
     globals()["size"] = n
     globals()["solutions"] = 0
@@ -33,16 +36,21 @@ def nqueens(n):
     return globals()["solutions"]
 
 nqueens(8)
+print(solutions)
 
 #This funcion will allow us to split our main array to determain each solution individually
 def split(arr, size):
      globals()["solucion_individual"] = []
+     globals()["count"] = 0
      while len(arr) > size:
          pice = arr[:size]
          solucion_individual.append(pice)
          arr   = arr[size:]
+         globals()["count"] += 1
      solucion_individual.append(arr)
      return solucion_individual
 
 split(squeens, size)
-print(size)
+
+def save_queens(size,solucion_individual,solutions):
+    NQueens().eight_queens(numero_de_reynas=size, lista=solucion_individual, total_de_soluciones=solutions)
