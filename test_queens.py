@@ -1,4 +1,4 @@
-from nqueens.queens import nqueens
+from nqueens.travis import nqueens
 import pytest
 
 def test_nqueens():
