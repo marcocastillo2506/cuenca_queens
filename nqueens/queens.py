@@ -25,7 +25,6 @@ def check_conflicts(queens, row):
 
 #This function will allow us to create our board size
 def nqueens(n):
-    globals()["count"] = 0
     globals()["squeens"] = []
     globals()["size"] = n
     globals()["solutions"] = 0
@@ -41,12 +40,10 @@ print(solutions)
 #This funcion will allow us to split our main array to determain each solution individually
 def split(arr, size):
      globals()["solucion_individual"] = []
-     globals()["count"] = 0
      while len(arr) > size:
          pice = arr[:size]
          solucion_individual.append(pice)
          arr   = arr[size:]
-         globals()["count"] += 1
      solucion_individual.append(arr)
      return solucion_individual
 

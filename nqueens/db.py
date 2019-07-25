@@ -1,10 +1,10 @@
-from queens import size, solucion_individual, solutions, count
+from queens import size, solucion_individual, solutions
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, ARRAY
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-db_string = "postgres://postgres:Holacode@localhost:5432/soluciones"
+db_string = "postgres://postgres:Holacode@postgres:5432/soluciones"
 
 db = create_engine(db_string)
 base = declarative_base()
