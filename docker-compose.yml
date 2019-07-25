@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  queens:
+    build:
+      context: .
+    image: marcocastillo2506/queens
+    env_file: data.conf
+    ports:
+      - '3000:3000'
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    env_file: data.conf
+    ports:
+      - '5432'
+    volumes:
+      - db_info:/var/lib/postgresql
+
+volumes:
+  db_info:
