@@ -1,4 +1,3 @@
-from db import *
 #This function will allow us to place a queen and check if spot is available
 def place_queens(n, queens, row):
     for i in range(n):
@@ -50,4 +49,5 @@ def split(arr, size):
 split(squeens, size)
 
 def save_queens(size,solucion_individual,solutions):
+    from db import NQueens
     NQueens().eight_queens(numero_de_reynas=size, lista=solucion_individual, total_de_soluciones=solutions)
