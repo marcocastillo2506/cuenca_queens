@@ -1,5 +1,7 @@
-from nqueens.travis import nqueens
+import sys
+sys.path.append('nqueens')
 import pytest
+from queens import nqueens
 
 def test_nqueens():
     assert nqueens(4) == 2
